@@ -32,7 +32,7 @@ while nextToken!="":
         #********************************************************#
         #authorize, demonstrate how to generate hmac signature here
         signature=hmac.new(secretkey.encode(),message.encode(),hashlib.sha256).hexdigest()
-        authorization  = "CEA algorithm=HmacSHA256, access-key="+accesskey+", signed-date="+datetime+", signature="+signature
+        authorization="CEA algorithm=HmacSHA256, access-key="+accesskey+", signed-date="+datetime+", signature="+signature
         #print out the hmac key
         #********************************************************#
         url = "https://api-gateway.coupang.com"+path+"?%s" % query
@@ -50,7 +50,6 @@ while nextToken!="":
         print(e.reason)
         print(e.fp.read())
     else:
-        # 200
         print(200)
         body = resp.read().decode(resp.headers.get_content_charset())
         data=json.loads(body)

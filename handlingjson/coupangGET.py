@@ -6,7 +6,6 @@ import urllib.request
 import ssl
 
 os.environ['TZ'] = 'GMT+0'
-
 datetime=time.strftime('%y%m%d')+'T'+time.strftime('%H%M%S')+'Z'
 method = "GET"
 #replace with your own vendorId
